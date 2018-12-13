@@ -43,3 +43,7 @@ Thumbs.db
 **/Thumbs.db
 
 **/jupyterhub*
+**/__pycache__
+__pycache__
+**/.ipynb_checkpoints
+
