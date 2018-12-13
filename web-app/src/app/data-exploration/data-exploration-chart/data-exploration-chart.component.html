@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-md-8">
+
+    <div class="card">
+      <div class="card-header">
+        <h5>{{feature}} Scatterplot</h5>
+      </div>
+      <div class="card-body">
+        <div #chart></div>
+      </div>
+      <div class="card-footer">
+        <div class="row text-center">
+
+          <div class="col-sm-12 col-md mb-sm-2 mb-0">
+            <div class="text-muted">{{feature}} vs Housing Price</div>
+              <br>
+            <form>
+              <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="selectColorByVar{{feature}}">Color By Feature</label>
+                <div class="col-md-6">
+                  <select [(ngModel)]="colorByVar" (ngModelChange)="colorCircles()" class="form-control" id="selectColorByVar{{feature}}" name="selectColorByVar{{feature}}">
+                    <option value="RM">RM</option>
+                    <option value="LSTAT">LSTAT</option>
+                    <option value="PTRATIO">PTRATIO</option>
+                    <option value="MEDV">MEDV</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <button class="btn btn-primary" (click)="reset()">Reset</button>
+                </div>
+              </div>
+            </form>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h5>{{feature}} Statistics</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <strong>Mean:</strong>
+              </div>
+                <div class="col-md-6">
+                  <p>{{stats.mean}}</p>
+                </div>
+              <div class="col-md-4">
+                <strong>Min</strong>
+              </div>
+              <div class="col-md-6">
+                <p>{{stats.minimum}}</p>
+              </div>
+              <div class="col-md-4">
+                <strong>Max</strong>
+              </div>
+              <div class="col-md-6">
+                <p>{{stats.maximum}}</p>
+              </div>
+              <div class="col-md-4">
+                <strong>Std</strong>
+              </div>
+              <div class="col-md-6">
+                <p>{{stats.std}}</p>
+              </div>
+            </div>
+
+        </div>
+      </div>
+  </div>
+</div>

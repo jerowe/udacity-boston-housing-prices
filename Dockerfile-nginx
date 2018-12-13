@@ -1,0 +1,6 @@
+FROM nginx:latest
+
+COPY html/* /usr/share/nginx/html/
+RUN mkdir -p /etc/nginx/proxy/conf.d
+COPY aws_deployment/proxy/conf.d/default.conf /etc/nginx/proxy/conf.d/default.conf
+

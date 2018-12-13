@@ -1,0 +1,37 @@
+<h2>Data Exploration</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>Variables</h4>
+            </div>
+            <div class="card-body">
+                <h5>Features</h5>
+                <p><strong>RM</strong> is the average number of rooms among homes in the neighborhood.</p>
+                <p><strong>LSTAT</strong> is the percentage of homeowners in the neighborhood considered "lower class"
+                    (working
+                    poor).</p>
+                <p><strong>PTRATIO</strong> is the ratio of students to teachers in primary and secondary schools in the
+                    neighborhood.</p>
+                <h5>Target</h5>
+                <p><strong>MEDV</strong> Home Price</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row" *ngIf="data && stats">
+    <div class="col-md-12">
+        <app-data-exploration-chart [data]="data" [stats]="stats['RM']" [feature]="'RM'"></app-data-exploration-chart>
+    </div>
+    <div class="col-md-12">
+        <app-data-exploration-chart [data]="data" [stats]="stats['LSTAT']"
+                                    [feature]="'LSTAT'"></app-data-exploration-chart>
+    </div>
+    <div class="col-md-12">
+        <app-data-exploration-chart [data]="data" [stats]="stats['PTRATIO']"
+                                    [feature]="'PTRATIO'"></app-data-exploration-chart>
+    </div>
+</div>

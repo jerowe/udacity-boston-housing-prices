@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>Model Learning</h2>
+    </div>
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                Model Selection
+            </div>
+            <div class="card-body">
+                The graphs represent a Decision Tree Regressor model from sklearn. The metric being used is an R2 Score.
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <form #maxDepthForm="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="multiple-select">Select Max Depth <i
+                                class="fa fa-question-circle fa-lg mt-4"
+                                tooltip="Choose 1 or more max depths to see how the score changes vs the select max depths."></i></label>
+                        <div class="col-md-9">
+                            <select [(ngModel)]="maxDepths" class="form-control" id="multiple-select"
+                                    name="multiple-select" size="5" multiple="">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div *ngFor="let maxDepth of maxDepths">
+                <div class="col-md-12">
+                    <app-chart [maxDepth]="maxDepth"></app-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "nginx-proxy-conf",
+      "host": {
+        "sourcePath": "/var/app/current/proxy/conf.d"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "jerowe-udacity-boston-housing-server",
+      "image": "quay.io/jerowe/udacity-boston-housing-server:latest",
+      "update": true,
+      "essential": true,
+      "memory": 248,
+      "mountPoints": [
+      ],
+      "portMappings": [
+        {
+          "hostPort": 5000,
+          "containerPort": 5000
+        }
+      ]
+    },
+    {
+      "name": "jerowe-udacity-boston-housing-client",
+      "image": "quay.io/jerowe/udacity-boston-housing-client:latest",
+      "essential": true,
+      "update": true,
+      "memory": 248,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": [
+        "jerowe-udacity-boston-housing-server"
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "nginx-proxy-conf",
+          "containerPath": "/etc/nginx/conf.d",
+          "readOnly": true
+        }
+      ]
+    }
+  ]
+}

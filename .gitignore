@@ -1,15 +1,17 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
+web-app/dist
 /tmp
-/out-tsc
+web-app/out-tsc
 
 # dependencies
 /node_modules
+**/node_modules
 
 # IDEs and editors
 /.idea
+**/.idea
 .project
 .classpath
 .c9/
@@ -37,3 +39,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+**/.DS_Store
+**/Thumbs.db
+
+**/jupyterhub*
