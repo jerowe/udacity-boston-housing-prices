@@ -10,7 +10,7 @@
   ],
   "containerDefinitions": [
     {
-      "name": "jerowe-udacity-boston-housing-server",
+      "name": "udacity-boston-housing-server",
       "image": "quay.io/jerowe/udacity-boston-housing-server:latest",
       "update": true,
       "essential": true,
@@ -25,7 +25,7 @@
       ]
     },
     {
-      "name": "jerowe-udacity-boston-housing-client",
+      "name": "udacity-boston-housing-client",
       "image": "quay.io/jerowe/udacity-boston-housing-client:latest",
       "essential": true,
       "update": true,
@@ -37,7 +37,7 @@
         }
       ],
       "links": [
-        "jerowe-udacity-boston-housing-server"
+        "udacity-boston-housing-server"
       ],
       "mountPoints": [
         {

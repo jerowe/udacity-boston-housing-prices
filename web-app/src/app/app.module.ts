@@ -34,7 +34,7 @@ import {ChartComponent} from './model-learning/chart/chart.component';
 import {DataExplorationComponent} from './data-exploration/data-exploration.component';
 import {DataExplorationChartComponent} from './data-exploration/data-exploration-chart/data-exploration-chart.component';
 import {ModelComplexityComponent} from './model-complexity/model-complexity.component';
-import { HomeComponent } from './home/home.component';
+import {HomeComponent} from './home/home.component';
 
 @NgModule({
     declarations: [

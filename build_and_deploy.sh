@@ -14,8 +14,8 @@ docker-compose build --force-rm
 #docker-compose restart; docker-compose up -d
 
 ### Tag the docker images
-docker tag boston-house-prices_boston_housing_server quay.io/jerowe/udacity-boston-housing-server:latest
-docker tag boston-house-prices_boston_housing_client quay.io/jerowe/udacity-boston-housing-client:latest
+docker tag boston-house-prices_boston-housing-server quay.io/jerowe/udacity-boston-housing-server:latest
+docker tag boston-house-prices_boston-housing-client quay.io/jerowe/udacity-boston-housing-client:latest
 
 # Upload them to quay
 docker push quay.io/jerowe/udacity-boston-housing-server:latest

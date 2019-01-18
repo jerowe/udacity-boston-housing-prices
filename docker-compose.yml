@@ -10,7 +10,7 @@ version: '3'
 
 services:
 
-    boston_housing_server:
+    udacity-boston-housing-server:
       hostname: jerowe-boston-housing-server
       build:
         context: .
@@ -20,8 +20,7 @@ services:
       ports:
         - "5000:5000"
 
-    boston_housing_client:
-#      image: nginx
+    udacity-boston-housing-client:
       build:
         context: .
         dockerfile: Dockerfile-nginx
